@@ -35,7 +35,7 @@ def download_images(image_metadata):
         save_path = os.path.join(IMAGES_DIR, f"{image_id}.jpg")
 
         if os.path.exists(save_path):
-            continue  
+            continue
 
         img_data = requests.get(image_url)
         if img_data.status_code == 200:
@@ -48,5 +48,5 @@ def download_images(image_metadata):
 
 
 if __name__ == "__main__":
-    metadata = fetch_metadata(limit=300)  
+    metadata = fetch_metadata(limit=300)
     download_images(metadata)
